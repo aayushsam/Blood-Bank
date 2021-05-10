@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<title>Assignment</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="donateform.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-danger ">
+        <img src="image/logo.png" class="logo">
+        <a class="navbar-brand font-weight-bold text-white">BloodBank</a>
+        <form class="form-inline">
+            <button id="logout" class="btn btn-outline-light my-2 my-sm-0" type="button">LogOut</button>
+        </form>
+    </nav>
+
+    <div class="container">
+        <form role="form">
+            <h2>Register to Donate Blood</h2>
+            <hr>
+            <div class="form-horizontal">
+                <div class="form-group ">
+                    <label for="firstName" class="col-sm-3 control-label">First Name*</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="First Name" class="form-control" autofocus
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Last Name*</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="lastName" placeholder="Last Name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" placeholder="Email" class="form-control" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender*</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="gender" id="genderRadios"
+                                    value="Female" checked>
+                                <label class="form-check-label" for="genderRadios">Female</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="gender" id="genderRadios"
+                                    value="Male">
+                                <label class="form-check-label" for="genderRadios">Male</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-3">Gender*</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="gender" id="genderRadios" value="Female">
+                                <label class="form-check-label" for="genderRadios">Female</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="gender" id="genderRadios" value="Male">
+                                <label class="form-check-label" for="genderRadios">Male</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <label class="control-label col-sm-6">Any Medical issues?*</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="medicalissue" id="medissueRadios" value="Yes" checked>
+                                <label class="form-check-label" for="medissueRadios">Yes</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="medicalissue" id="medissueRadios" value="No">
+                                <label class="form-check-label" for="medissueRadios">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber" class="col-sm-3 control-label">Phone number*</label>
+                    <div class="col-sm-9">
+                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-control"
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Blood Group*</label>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios1"
+                                    value="A+" checked>
+                                <label class="form-check-label" for="bgRadios">A+</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios2"
+                                    value="B+">
+                                <label class="form-check-label" for="bgRadios">B+</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios3"
+                                    value="B-">
+                                <label class="form-check-label" for="bgRadios">B-</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios4"
+                                    value="AB+">
+                                <label class="form-check-label" for="bgRadios">AB+</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios5"
+                                    value="O+">
+                                <label class="form-check-label" for="abgRadios">O+</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="bloodgrp" id="bgRadios6"
+                                    value="O-">
+                                <label class="form-check-label" for="bgRadios">O-</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- </div> <!- /.form-group -->
+                <div class="form-group">
+                    <label class="control-label col-sm-6">Suffering from any breathing issues*</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="asthma" id="asthmaRadios"
+                                    value="Yes" checked>
+                                <label class="form-check-label" for="asthmaRadios" >Yes</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="form-check-input" type="radio" name="asthma" id="asthmaRadios" value="No">
+                                <label class="form-check-label" for="asthmaRadios">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="bookslot" class="btn btn-danger btn-block register" >Register</button>
+                <a href="home.html"><button type="button" id="cancel"
+                        class="btn btn-danger btn-block cancelbtn">Cancel</button></a>
+
+            </div>
+        </form> <!-- /form -->
+        <button type="button" id="viewdata" class="btn btn-danger btn-block orderofpeople">Check our Doners
+            list</button>
+
+    </div> <!-- ./container -->
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="congfig.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-firestore.js"></script>
+<script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyBxTzzf5ZP5rear-NvTDZy8xc4wtgodbFM",
+    authDomain: "bloodbanksystem-7b6e6.firebaseapp.com",
+    projectId: "bloodbanksystem-7b6e6",
+    storageBucket: "bloodbanksystem-7b6e6.appspot.com",
+    messagingSenderId: "677626614616",
+    appId: "1:677626614616:web:28560b7f68aec1f69c4b2d",
+    measurementId: "G-F655215ZQ8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+ // firebase.analytics();
+
+    document.getElementById('bookslot').addEventListener('click', bookslot);
+    function bookslot() {
+
+        var fname = document.getElementById("firstName").value;
+        var lname = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var birthDate = document.getElementById("birthDate").value;
+        var bloodgroup = document.querySelector('input[name="bloodgrp"]:checked').value;
+        var medical = document.querySelector('input[name="medicalissue"]:checked').value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+        var asthma = document.querySelector('input[name="asthma"]:checked').value;
+    
+//console.log(bloodgroup,medical,gender,asthma);
+        if (fname !== "" && lname !== "" && email !== "" && phoneNumber !== "" && medical !== "" && bloodgroup !== "" && gender !== "" && asthma !== "") {
+
+            if (asthma === "Yes" || medical === "Yes") {
+                alert("Sorry, You are not eligible for Donating Blood.");
+            }
+
+            else {
+
+                const db = firebase.firestore();
+                const users_db = db.collection('users');
+                users_db.doc(email).set({
+                    first_name: fname,
+                    last_name: lname,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    DOB: birthDate,
+                    blood_group: bloodgroup,
+                    medical_issue: medical,
+                    gender: gender,
+                    asthma: asthma
+                })
+                    .then(data => {alert("Thankyou for your registration. You can visit our center soon.Please carry your medical certificate.");
+                    })
+                    .catch(err => console.error(err))
+            }
+            
+        }
+        else {
+            alert("Enter all Credentials");
+        }
+
+     }
+
+
+    document.getElementById('viewdata').addEventListener('click', viewdata);
+    function viewdata() {
+        location.replace("viewdata.html");
+    }
+
+    document.getElementById('logout').addEventListener('click', logOut);
+    function logOut() {
+        location.replace("index.html");
+    }
+
+</script>
+
+
+</html>
